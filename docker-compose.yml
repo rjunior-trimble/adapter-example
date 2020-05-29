@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  mongo:
+    image: mongo:4.4.0-rc7-bionic
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: adapter
+    ports:
+    - '27017:27017'
+  postgres:
+    image: postgres:12.3
+    environment:
+      POSTGRES_PASSWORD: adapter
+      POSTGRES_USER: root
+      POSTGRES_DB: adapter-db
+    ports:
+      - '5432:5432'
